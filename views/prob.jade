@@ -1,0 +1,38 @@
+extend layout 
+
+block content
+    table(style='width:100%', border='1')
+        tr
+            td Nr. Prob
+            td Grup de criterii
+            td Criteriu
+            td Sumar
+            td Descriere
+            td Nota
+            td Neaplicabil
+            td Obs
+            td Auditori
+            td Imagini
+        tr
+            td #{v.Nr}
+            td #{v.Grup_de_criterii}
+            td #{v.Criteriu}
+            td #{v.Sumar}
+            td #{v.Descriere}
+            td #{v.Nota}
+            td #{v.Neaplicabil}
+            td #{v.Observatii}
+            td #{v.Comentarii}
+            td #{v.Auditor}
+            td #{v.Imagini}
+    p Nr. Prob: #{v.Nr} 
+    p Grup de criterii: #{v.Grup_de_criterii}
+    p Criteriu: #{v.Criteriu}
+    p Sumar: #{v.Sumar}
+    p Descriere: #{v.Descriere}
+    p Nota: #{v.Nota}
+    p Neaplicabil: #{v.Neaplicabil}
+    p Obs: #{v.Observatii}
+    p Comentarii: #{v.Comentarii}
+    p Auditori: #{v.Auditor}
+    p Imagini: #{v.Imagini}

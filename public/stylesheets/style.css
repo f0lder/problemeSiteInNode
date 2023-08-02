@@ -1,0 +1,61 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(247, 243, 237);
+  color: black;
+  font-size: 1.5em;;
+}
+
+a {
+  color: #00B7FF;
+  text-decoration: none;
+}
+.ceva{
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: 50% 50% 50%;
+  gap: 10px;
+}
+.items{
+  background: white;
+  padding: 1em; 
+} 
+.nr{
+  float: left;
+  width: 1em;
+  padding: 1em;
+  text-align: center;
+  margin: auto;
+  
+}
+.wrap{
+  display: inline-grid;
+  grid-template-columns: 10% 90%;
+  margin: 1em;
+  border: 1px solid black;
+  background: white;
+}
+
+.items a{
+  color: black;
+}
+
+.wrap:hover .nr{
+  color: white;
+  background: black;
+}
+.wrap:hover .items{
+  color: white;
+  background: black;
+}
+.wrap:hover .items a{
+  color: white;
+  background: black;
+}
+.wrap:hover{
+  background: black;
+  border-color: white;
+}
+table{
+  background: white;
+}
