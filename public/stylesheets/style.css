@@ -4,6 +4,7 @@ body {
   background-color: rgb(247, 243, 237);
   color: black;
   font-size: 1.5em;;
+  margin-top: 2em;
 }
 
 a {
@@ -16,6 +17,7 @@ a {
   grid-template-rows: 50% 50% 50%;
   gap: 10px;
 }
+
 .items{
   background: white;
   padding: 1em; 
@@ -58,4 +60,37 @@ a {
 }
 table{
   background: white;
+}
+
+
+.menu{
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  padding: 2em;
+}
+.menu a{
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.ceva2{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  gap: 10px;
+}
+.cont{
+  display: grid;
+  grid-template-columns: 30% 30%;
+  grid-template-rows: 30% 30%;
+  gap: 10px;
+}
+.cat{
+  display: inline-grid;
+  padding: 1em;
+  border: 1px solid black;
 }

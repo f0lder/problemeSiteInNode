@@ -28,12 +28,24 @@ const prob = mongoose.model('list', probSchema);
 
 async function getItems() {
 
-    const Items = await prob.find({});
+    const Items = await prob.find();
     return Items;
 }
 
+async function countByCriteria(c){
+    const Items = await prob.countDocuments({Grup_de_criterii:c});
+    return Items;
+}
 
+async function getDistinctCrit(){
+    const Items = await prob.distinct("Grup_de_criterii");
+    return Items;
+}
 
+async function getItemsBy(c){
+    const Items = await prob.find({"Grup_de_criterii":c});
+    return Items;
+}
 router.get('/', function (req, res, next) {
 
     getItems().then(function (docs) {
@@ -47,7 +59,32 @@ router.get('/', function (req, res, next) {
     });
 });
 
+router.get('/col', function (req, res, next) {
+    let newList = [];
+    
+        getDistinctCrit().then(function(list){
+            list.forEach(e =>{
+                e = e.replace(/ /g, "");
+                e = e.replace(/[^a-zA-Z0-9 ]/g, '');
+                newList.push(e);
+            });
 
+            console.log(newList);
+
+            res.render('col',{list:newList});
+            
+            list.forEach(e =>{
+                
+                getItemsBy(e).then(function(docs){
+                    e = e.replace(/ /g, "");
+                    e = e.replace(/[^a-zA-Z0-9 ]/g, '');
+                    router.get("/cat=" + e, function(req,res,next){
+                        res.render("cat",{"vect": docs,"cat":e});
+                    })
+                });
+            })
+        });
+});
 
 
 module.exports = router;

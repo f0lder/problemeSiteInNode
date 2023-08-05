@@ -1,0 +1,6 @@
+extends layout
+
+block content
+    .cont
+        each item in list 
+            a.cat(href='/cat=#{item}') #{item}

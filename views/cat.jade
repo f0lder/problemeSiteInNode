@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    p.p-cat Categorie: #{cat}
+    each v in vect 
+        .ceva2
+            .wrap
+                .nr #{v.Nr} 
+                .items(onclick="location.href=/id=#{v._id}")
+                    a(href='/id=#{v._id}') #{v.Criteriu}
